@@ -1,0 +1,23 @@
+<div class="container">
+
+    <h1>Listado de publicaciones</h1>
+
+    <hr>
+
+    <ul>
+        {{#each books}}
+        <li class="book-row">
+            <a href="/libros/detalles/{{_id}}">{{title}}</a>
+            <a href="/libros/editar?book_id={{_id}}" class="btn btn-sm btn-dark">Editar</a>
+            <form action="/libros/eliminar?book_id={{_id}}" method="POST">
+                <button class="btn btn-sm btn-warning" type="submit">Eliminar</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+
+    <hr>
+
+    <a href="/" class="btn btn-dark">Volver al incio</a>
+
+</div>
